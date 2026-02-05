@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website portofolio pribadi Cindy Khaerany Arifin" />
+  <meta name="keywords" content="Portofolio, Cindy Khaerany, Penulis, Siswa SMAN 1 Subang" />
+  <meta name="author" content="Cindy Khaerany Arifin" />
+  <title>Portofolio Cindy Khaerany</title>
+
+  <style>
+    :root {
+      --cokelat: #5c3a21;
+      --emas: #d4af37;
+      --beige: #f5f0e6;
+      --putih: #ffffff;
+      --dark-bg: #1e1e1e;
+      --dark-text: #f1f1f1;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--beige);
+      color: var(--cokelat);
+      transition: 0.4s;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--cokelat), var(--emas));
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    aside {
+      flex: 1;
+      min-width: 220px;
+      background: #e8dcc7;
+      padding: 20px;
+    }
+
+    main {
+      flex: 3;
+      padding: 30px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--emas);
+      padding-bottom: 5px;
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .counter {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--emas);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: var(--cokelat);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--emas);
+      color: black;
+    }
+
+    footer {
+      background: var(--cokelat);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .dark-mode {
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: white;
+      color: var(--cokelat);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 14px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    /* Chat bubble */
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--emas);
+      color: black;
+      padding: 12px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cindy Khaerany Arifin</h1>
+  <nav>
+    <a href="#profil">Profil</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Mode</button>
+</header>
+
+<div class="container">
+
+  <aside>
+    <h3>Tentang Saya</h3>
+    <p>Seorang penulis muda yang mencintai seni, warna, dan cerita.</p>
+    <p class="counter">👁️ Pengunjung: <span id="visitCount">1205</span></p>
+  </aside>
+
+  <main>
+    <section id="profil">
+      <h2>Profil Singkat</h2>
+      <p><strong>Nama:</strong> Cindy Khaerany Arifin</p>
+      <p><strong>Kegemaran:</strong></p>
+      <ul>
+        <li>Menggambar</li>
+        <li>Melukis</li>
+        <li>Menonton film</li>
+        <li>Bermain game online</li>
+      </ul>
+    </section>
+
+    <section id="pendidikan">
+      <h2>Pendidikan</h2>
+      <ul>
+        <li>2014-2020 — SDN Dangdeur 2</li>
+        <li>2020-2023 — SMPN 3 Subang</li>
+        <li>2023-sekarang — SMAN 1 Subang</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Video Perkenalan</h2>
+      <video width="100%" controls>
+        <source src="video.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+      </video>
+    </section>
+
+    <section id="kontak">
+      <h2>Hubungi Saya</h2>
+      <form>
+        <input type="text" placeholder="Nama kamu" required>
+        <input type="email" placeholder="Email kamu" required>
+        <textarea rows="4" placeholder="Pesan..."></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+
+      <p>📧 Email: <a href="mailto:cindykhasi@gmail.com">cindykhasi@gmail.com</a></p>
+      <p>📷 Instagram: <a href="https://instagram.com/cndykha" target="_blank">@cndykha</a></p>
+    </section>
+  </main>
+
+</div>
+
+<div class="chatbot" onclick="alert('Halo! Ini fitur live chat sederhana 😊')">
+  💬 Chat
+</div>
+
+<footer>
+  © 2025 Cindy Khaerany Arifin. Semua hak dilindungi.<br>
+  <em>"Mudah-mudahan Tuhan meridai daun penaku."</em>
+</footer>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+
+</body>
+</html>
